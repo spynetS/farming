@@ -1,0 +1,8 @@
+classpath:/home/spy/.m2/repository/org/tiledreader/TiledReader/1.1.0/TiledReader-1.1.0.jar	96151:1599755505000
+classpath:/home/spy/.m2/repository/com/github/spynetS/speler/0.1.0-SNAPSHOT/speler-0.1.0-SNAPSHOT.jar	92747:1795654637489
+classpath:/home/spy/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar	298435:1716144881000
+classpath:/home/spy/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar	19370:1714146969000
+classpath:/home/spy/.m2/repository/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar	785029:1694875888000
+classpath:/home/spy/.m2/repository/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar	135546:1694876041000
+classpath:/home/spy/.m2/repository/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar	929192:1694876671000
+classpath:/home/spy/.m2/repository/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar	120283:1694877117000
