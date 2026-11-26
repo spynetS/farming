@@ -118,9 +118,9 @@ public class MachineScript extends Script implements AnimationListener, MachineL
         for(ItemStack stack : recipe.getOutput()) {
             System.out.println("dropping " + stack.getAmount() +" of " + stack.getItem() );
 
-            GameObject ob = new GameObject(this.gameObject.getEcs());
+            GameObject ob = new GameObject();
+            ob.instantiate(gameObject.getEcs());
             try {
-
                 SpriteSheet itemsheet = new SpriteSheet(ResourceManager.loadImage("./farm/objects&items/items free.png"), 16,16);
                 ob.addComponent(new SpriteComponent(Sprite.getSprite(itemsheet, 2, 0)));
             } catch (Exception e) {
@@ -130,6 +130,10 @@ public class MachineScript extends Script implements AnimationListener, MachineL
             ob.addComponent(new ScriptComponent(new ItemScript(stack.getItem())));
             ob.transform.worldScale = new Vector2(30,30);
             ob.transform.position = transform.position.add(new Vector2(0, -100));
+
+
+
+
         }
     }
 }

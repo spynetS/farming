@@ -1,9 +1,12 @@
 package com.example.testgame;
 
+import java.util.UUID;
+
 import com.example.testgame.machines.MachineScript;
 import com.github.spynets.speler.Vector2;
 import com.github.spynets.speler.ecs.components.ScriptComponent;
 import com.github.spynets.speler.ecs.components.SpriteComponent;
+import com.github.spynets.speler.ecs.components.Transform;
 import com.github.spynets.speler.resources.ResourceManager.Sprite;
 import com.github.spynets.speler.scripting.*;
 import com.github.spynets.speler.input.*;
@@ -31,10 +34,27 @@ public class Mouse extends Script {
                                          Math.round(mouse.getY() / 50f) * 50f
                                         );
 
-        if(Input.isMouseButtonPressed(Keys.LEFTCLICK)) {
+        if(Input.isMouseButtonDown(Keys.LEFTCLICK)) {
             System.out.println("clicked");
-            
-            GameObject machine = new GameObject(gameObject.getEcs());
+
+
+            for(UUID i : gameObject.getEcs().getEntities()){
+                Transform t = gameObject.getEcs().getComponent(i, Transform.class);
+                if(t == null) continue;
+                if (!transform.position.equals(t.position)) continue;
+                
+                ScriptComponent sc = gameObject.getEcs().getComponent(i, ScriptComponent.class);
+                if(sc == null) continue;
+
+
+
+                if (sc.getScript(MachineScript.class) != null)
+                    return;
+            }
+
+
+            GameObject machine = new GameObject();
+            machine.instantiate(gameObject.getEcs());
             machine.addComponent(new ScriptComponent(new MachineScript()));
             machine.transform.position = transform.position;
 

@@ -48,8 +48,8 @@ public class Main {
                     }
                     else if(obj.getOriginal().getName().equals("collider"))  {
                         player.transform.worldScale = obj.transform.worldScale;
-                        player.addComponent(new ColliderComponent());
-                        //player.addComponent(new Renderable());
+                        //player.addComponent(new ColliderComponent());
+                        player.addComponent(new Renderable());
                     }
 
                 }
