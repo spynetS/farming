@@ -1,6 +1,6 @@
 package com.example.testgame;
 
-import com.example.testgame.machines.Machine;
+import com.example.testgame.machines.MachineScript;
 import com.github.spynets.speler.Vector2;
 import com.github.spynets.speler.ecs.components.ScriptComponent;
 import com.github.spynets.speler.ecs.components.SpriteComponent;
@@ -31,11 +31,11 @@ public class Mouse extends Script {
                                          Math.round(mouse.getY() / 50f) * 50f
                                         );
 
-        if(Input.isMouseButtonDown(Keys.LEFTCLICK)) {
+        if(Input.isMouseButtonPressed(Keys.LEFTCLICK)) {
             System.out.println("clicked");
             
             GameObject machine = new GameObject(gameObject.getEcs());
-            machine.addComponent(new ScriptComponent(new Machine()));
+            machine.addComponent(new ScriptComponent(new MachineScript()));
             machine.transform.position = transform.position;
 
             //gameObject.instantiate(machine);

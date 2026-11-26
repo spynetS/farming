@@ -1,3 +1,4 @@
+
 package com.example.testgame;
 
 import java.awt.image.BufferedImage;
@@ -10,9 +11,12 @@ import com.github.spynets.speler.animations.Animatable;
 import com.github.spynets.speler.animations.AnimationTrack;
 import com.github.spynets.speler.animations.TimeTrackedAnimation;
 import com.github.spynets.speler.animations.AnimationTrack.Keyframe;
+import com.github.spynets.speler.ecs.Camera;
 import com.github.spynets.speler.ecs.components.AnimationComponent;
 import com.github.spynets.speler.ecs.components.ColliderComponent;
 import com.github.spynets.speler.ecs.components.Renderable;
+import com.github.spynets.speler.ecs.components.Rigidbody;
+import com.github.spynets.speler.ecs.components.ScriptComponent;
 import com.github.spynets.speler.ecs.components.SpriteComponent;
 import com.github.spynets.speler.input.Input;
 import com.github.spynets.speler.input.Keys;
@@ -29,8 +33,9 @@ public class Player extends Script {
     BufferedImage image = ResourceManager.loadImage("./farm/characters/main character/walk and idle.png");
     SpriteSheet playerSheet = new SpriteSheet(image, 197/8, 72/3);
 
-    float speed = 100;
+    Rigidbody rb = new Rigidbody(false);
 
+    float speed = 20;
     private void createWalkAnimation() throws Exception {
         Animatable<String> spriteAnimateable = new Animatable<String>() {
                 @Override
@@ -60,6 +65,25 @@ public class Player extends Script {
     @Override
     public void start() {
 
+
+        // init the camera object
+        GameObject cameraObject = new GameObject(gameObject.getEcs());
+        Camera camera = new Camera(0,0,1);
+        cameraObject.addComponent(camera);
+        cameraObject.addComponent(new ScriptComponent(new SmoothCamera(transform, new Vector2(0, 50))));
+
+
+        ColliderComponent cc = new ColliderComponent();
+        cc.width = -50;
+        cc.height = -50;
+        gameObject.addComponent(cc);
+
+
+        transform.tag = "player";
+
+        rb.friction = new Vector2(0.9f,0.90f);
+        gameObject.addComponent(rb);
+
         try{
             createWalkAnimation();
             gameObject.addComponent(comp);
@@ -73,7 +97,7 @@ public class Player extends Script {
     public void update(float deltatime) {
         boolean walking = false;
         Vector2 walk = new Vector2(0,0);
-        Main.game.getSelectedScene().getCamera().setPosition(gameObject.transform.position.getX(),gameObject.transform.position.getY());
+        //Main.game.getSelectedScene().getCamera().setPosition(gameObject.transform.position.getX(),gameObject.transform.position.getY());
 
         if(Input.isKeyDown(Keys.D)) {
             comp.inverted = true;
@@ -99,7 +123,8 @@ public class Player extends Script {
             walking = true;
         }
 
-        transform.position = transform.position.add(walk.getNormalized());
+        rb.acceleration = rb.acceleration.add(walk.getNormalized().multiply(speed));
+
         if (!walking){
             animationComponent.currentTrack = 1;
         }

@@ -1,5 +1,14 @@
-classpath:/home/spy/.m2/repository/org/tiledreader/TiledReader/1.1.0/TiledReader-1.1.0.jar	96151:1599755505000
-classpath:/home/spy/.m2/repository/com/github/spynetS/speler/0.1.0-SNAPSHOT/speler-0.1.0-SNAPSHOT.jar	92747:1795654637489
+classpath:/home/spy/.m2/repository/com/github/spynetS/speler/0.1.0-SNAPSHOT/speler-0.1.0-SNAPSHOT.jar	83882:1795735022557
+classpath:/home/spy/.m2/repository/org/mapeditor/libtiled/1.5.0/libtiled-1.5.0.jar	215016:1788698814000
+classpath:/home/spy/.m2/repository/com/github/luben/zstd-jni/1.5.6-8/zstd-jni-1.5.6-8.jar	7327847:1732414173000
+classpath:/home/spy/.m2/repository/com/github/weisj/jsvg/2.0.0/jsvg-2.0.0.jar	723652:1745419129000
+classpath:/home/spy/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.5/jakarta.xml.bind-api-4.0.5.jar	131219:1770370700000
+classpath:/home/spy/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar	67380:1757591654000
+classpath:/home/spy/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar	26378:1708008216000
+classpath:/home/spy/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar	920148:1758559331000
+classpath:/home/spy/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar	137909:1758559334000
+classpath:/home/spy/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar	73265:1758559326000
+classpath:/home/spy/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar	25788:1681225637000
 classpath:/home/spy/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar	298435:1716144881000
 classpath:/home/spy/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar	19370:1714146969000
 classpath:/home/spy/.m2/repository/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar	785029:1694875888000
